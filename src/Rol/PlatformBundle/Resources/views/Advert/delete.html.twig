@@ -1,0 +1,15 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/edit.html.twig #}
+
+{% extends "RolPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+  Supprimer une annonce - {{ parent() }}
+{% endblock %}
+
+{% block rolplatform_body %}
+
+  <h2>Suppression du sujet </h2>
+
+    {{ include("RolPlatformBundle:Advert:formdelete.html.twig") }}
+
+{% endblock %}

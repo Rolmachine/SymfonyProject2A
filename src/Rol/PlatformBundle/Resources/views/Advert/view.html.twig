@@ -1,0 +1,32 @@
+{# src/Rol/PlatformBundle/Resources/views/Advert/index.html.twig #}
+
+{% extends "RolPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block rolplatform_body %}
+
+  <h2>{{Advert.title}}</h2>
+
+
+    par {{Advert.author}}, le {{Advert.date|date('d/m/y')}}<br/>
+<ul>
+    <li>{{Advert.content}}</li>
+    {# On vérifie qu'une image soit bien associée à l'annonce #}
+      {% if Advert.image is not null %}
+        <img 
+             src="{{ asset(Advert.image.webPath) }}"
+             alt="{{ Advert.image.alt }}"
+        />
+      {% endif %}
+</ul>
+{% if not Advert.applications.empty %}
+  <p>
+    {% for application in Advert.applications %}
+      {{ application.author }} a écrit : {{application.content}}<br/>
+    {% endfor %}
+  </p>
+{% endif %}
+{% endblock %}

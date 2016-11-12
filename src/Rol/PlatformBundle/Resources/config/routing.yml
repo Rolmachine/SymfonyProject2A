@@ -1,0 +1,28 @@
+rol_platform_home:
+    path:     /{page}
+    defaults: { _controller: RolPlatformBundle:Advert:index, page: 1}
+    requirements: {page: \d*}
+    
+rol_platform_application:
+    path:     /Advert/{id}/add
+    defaults: { _controller: RolPlatformBundle:Advert:application }
+    requirements: {id: \d+}
+    
+rol_platform_view:
+    path:     /Advert/{id}
+    defaults: { _controller: RolPlatformBundle:Advert:view }
+    requirements: {id: \d+}
+    
+rol_platform_add:
+    path:     /add
+    defaults: { _controller: RolPlatformBundle:Advert:add }
+    
+rol_platform_edit:
+    path:     /edit/{id}
+    defaults: { _controller: RolPlatformBundle:Advert:edit }
+    requirements: { id: \d+ }
+    
+rol_platform_delete:
+    path:     /delete/{id}
+    defaults: { _controller: RolPlatformBundle:Advert:delete }
+    requirements: { id: \d+ }

@@ -1,0 +1,30 @@
+{# src/Rol/PlatformBundle/Resources/views/Advert/index.html.twig #}
+
+{% extends "RolPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block rolplatform_body %}
+
+  <h2>Liste des sujets</h2>
+    <ul>
+    {% for Advert in listAdverts %}
+        <li>
+            <a href="{{ path('rol_platform_view', {'id': Advert.id}) }}">
+                {{ Advert.title }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+    <ul class="pagination">
+        {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+        {% for p in range(1, nbPages) %}
+        <li {% if p == page %} class="active"{% endif %}>
+            <a href="{{ path('rol_platform_home', {'page': p}) }}">{{ p }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

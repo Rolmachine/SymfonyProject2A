@@ -1,0 +1,9 @@
+<ul class="nav nav-pills nav-stacked">
+  {% for Advert in listAdverts %}
+    <li>
+      <a href="{{ path('rol_platform_view', {'id': Advert.id}) }}">
+        {{ Advert.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

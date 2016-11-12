@@ -1,0 +1,23 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/edit.html.twig #}
+
+{% extends "RolPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+  Ajouter un message - {{ parent() }}
+{% endblock %}
+
+{% block rolplatform_body %}
+
+  <h2>Ajouter un message</h2>
+
+  {{ include("RolPlatformBundle:Advert:formapplication.html.twig") }}
+
+  
+  <p>
+    <a href="{{ path('rol_platform_home') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à la l'accueil
+    </a>
+  </p>
+
+{% endblock %}
